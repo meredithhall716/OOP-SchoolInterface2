@@ -2,11 +2,23 @@ import csv
 import os.path
 from classes.person import Person
 
+
 class Student(Person):
 
     def __init__(self, name, age, password, role, school_id):
-        super().__init__(name, age, password, role)
+        self.name = name
+        self.age = age
+        self.password = password
+        self.role = role
         self.school_id = school_id
+    
+    def __str__(self):
+        return f'''
+            {self.name.upper()}
+            ---------------
+            age: {self.age}
+            id: {self.school_id}
+        '''
 
     @classmethod
     def objects(cls):
